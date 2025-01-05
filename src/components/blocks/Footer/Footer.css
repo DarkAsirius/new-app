@@ -1,0 +1,41 @@
+.footer {
+    background-color: #333; /* Цвет фона футера */
+    color: white; /* Цвет текста */
+    padding: 20px; /* Отступы внутри футера */
+    text-align: center; /* Выравнивание текста по центру */
+}
+
+.footer-content {
+    display: flex; /* Используем flexbox для выравнивания */
+    justify-content: space-between; /* Распределяем пространство между элементами */
+    margin-bottom: 10px; /* Отступ снизу */
+}
+
+.footer-links, .footer-socials {
+    flex: 1; /* Каждый блок занимает равное пространство */
+    margin: 0 5px; /* Отступы между блоками */
+}
+
+.footer-socials h3 {
+    padding-bottom: 15px; /* Устанавливаем отступ снизу для заголовка */
+}
+
+.footer-socials .social-icons {
+    display: flex; /* Используем flexbox для иконок */
+    justify-content: center; /* Центрируем иконки */
+    gap: 15px; /* Отступы между иконками */
+}
+
+.footer-socials .social-icons a {
+    color: white; /* Устанавливаем цвет иконок на белый */
+    transition: color 0.3s; /* Добавляем плавный переход при наведении */
+}
+
+.footer-socials .social-icons a:hover {
+    color: #ccc; /* Цвет иконок при наведении (можно изменить на любой другой) */
+}
+
+.footer-bottom {
+    border-top: 1px solid #444; /* Разделительная линия */
+    padding-top: 10px; /* Отступ сверху */
+}

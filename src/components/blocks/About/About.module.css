@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Pangolin&display=swap');
+
+:root{
+    --phil-bright: #d43754;
+    --yel-bright: #e7af2d;
+    --phil-grad: #f3d5c1;
+    --yel-grad: #f8e8ba;
+}
+
+.about{
+    position: relative; /* Позволяет изображению занимать всю область родителя */
+    width: 100%; /* Ширина 100% от ширины окна */
+    height: 100vh; /* Высота 100% от высоты окна */
+    overflow: hidden;
+}
+
+.image{
+    position: absolute; /* Позволяет изображению занимать всю область родителя */
+    top: 50%; /* Центрирует изображение по вертикали */
+    left: 50%; /* Центрирует изображение по горизонтали */
+    width: 100%; /* Ширина 100% от родителя */
+    height: 100%; /* Высота 100% от родителя */
+    object-fit: cover; /* Заполняет область, сохраняя пропорции изображения */
+    transform: translate(-50%, -50%);
+}
+
+.overlay {
+    position: absolute; /* Позволяет наложить текст и логотип на изображение */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex; /* Используем flexbox для выравнивания содержимого */
+    justify-content: space-around; /* Размещаем текст слева и логотип справа */
+    align-items: center; /* Центрируем по вертикали */
+    padding: 20px; /* Отступы вокруг содержимого */
+    color: white; /* Цвет текста */
+    z-index: 1;
+}
+
+.overlay::before {
+    content: ""; /* Создаем пустой контент для псевдоэлемента */
+    position: absolute; /* Позиционируем его абсолютно */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Затемнение с помощью полупрозрачного черного цвета */
+    z-index: 0; /* Устанавливаем z-index ниже, чем у текста и логотипа */
+}
+
+.logo {
+    width: 500px; /* Ширина логотипа */
+    height: auto; /* Автоматическая высота для сохранения пропорций */
+    z-index: 2;
+}
+
+.deviz{
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.head{
+    width: 600px;
+}
+
+.desc{
+    width: 500px;
+    font-size: 22px;
+}
+
+.text {
+    font-family: 'Pangolin', cursive;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center; /* Центрируем текст */
+    z-index: 2;
+}
+
+@media screen and (max-width: 768px) {
+    .overlay{
+        flex-direction: column;
+        padding-bottom: 0;
+        margin-bottom: 0;
+    }
+
+    .logo{
+        width:33vh; 
+        margin-bottom: 0;
+        position: relative;
+        padding-top: 60px;
+    }
+    
+    .text{
+        position: relative;
+        bottom: 90px;
+    }
+}

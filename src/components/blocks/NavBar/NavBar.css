@@ -1,0 +1,150 @@
+/* src/Header.css */
+@import url('https://fonts.googleapis.com/css2?family=Comforter&family=Pattaya&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pangolin&display=swap');
+:root{
+    --phil-bright: #d43754;
+    --yel-bright: #e7af2d;
+    --phil-grad: #f3d5c1;
+    --yel-grad: #f8e8ba;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 40px; /* Увеличиваем отступы слева и справа */
+    /* background: linear-gradient(
+        var(--phil-bright) 35%,
+        var(--yel-bright)); */
+    background-color: #444;
+    color: white;
+    box-shadow: 0 6px 12.5px rgba(0, 0, 0, 0.5);;
+    position: fixed; /* Фиксируем заголовок */
+    top: 0; /* Прикрепляем к верхней части экрана */
+    left: 0; /* Прикрепляем к левой части экрана */
+    right: 0; /* Прикрепляем к правой части экрана */
+    z-index: 1000; /* Убедитесь, что заголовок поверх других элементов */
+}
+
+.logo img {
+    width: 90px;
+    max-width: 100%;
+    height: auto;
+}
+
+.title {
+    flex-grow: 1; /* Позволяем заголовку занимать доступное пространство */
+    font-family: "Comforter", cursive;
+    font-size: 50px;
+    font-style: normal;
+    color: var(--yel-bright);
+    font-weight: 600;
+    text-align: center; /* Центрируем текст */
+    text-shadow: 6px 6px 12.5px rgba(0, 0, 0, 0.5);
+    letter-spacing: 0.25rem;
+    padding-left: 200px;
+}
+
+.nav {
+    display: flex;
+    gap: 40px; /* Увеличиваем расстояние между ссылками */
+}
+
+.nav a { 
+    font-weight: 550;
+    font-style: normal;   
+    font-size: 25px;
+    font-family: "Pangolin", cursive;
+    color: var(--yel-bright);
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.nav a:hover {
+    color: #f8e8ba;
+    transition: 0.3s;
+}
+
+/* Стили для кнопки гамбургера */
+.hamburger {
+    color: var(--yel-bright);
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+/* Адаптивные стили */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .title {
+        margin: 0;
+    }
+
+    .nav {
+        display: none; /* Скрываем меню по умолчанию */
+        flex-direction: column;
+        position: absolute;
+        top: 110px; /* Позиционируем меню в верхней части */
+        right: 0; /* Открываем меню справа */
+        width: 50%; /* Ширина меню 50% */
+        height: 27vh; /* Высота меню 100vh */
+        border-bottom-left-radius: 25px;
+        border-bottom-right-radius: 25px;
+        background-color: #444;
+        padding: 10px 0;
+        z-index: 1000; /* Убедитесь, что меню поверх других элементов */
+        transition: transform 0.3s ease; /* Плавный переход */
+        transform: translateX(100%); /* Скрываем меню за пределами экрана */
+        color: var(--phil-bright);
+        overflow-y: hidden; /* Убираем прокрутку */
+    }
+
+    .nav.active {
+        display: flex; /* Показываем меню, когда класс active добавлен */
+        transform: translateX(0); /* Перемещаем меню на экран */
+    }
+
+    .hamburger {
+        display: block; /* Показываем кнопку гамбургера на мобиль ных устройствах */
+    }
+
+    .nav a {
+        padding: 10px 20px;
+        text-align: center;
+        border-bottom: 1px solid #444; /* Добавляем разделитель между пунктами */
+        color: var(--yel-bright);
+    }
+
+    .nav a:last-child {
+        border-bottom: none; /* Убираем разделитель у последнего пункта */
+    }
+}
+
+/* Добавляем отступ для основного контента, чтобы он не перекрывался заголовком */
+main {
+    padding-top: 60px; /* Учитываем высоту заголовка */
+}
+
+@media (max-width: 515px){
+    .title{
+        font-size: 35px;
+    }
+}
+
+@media (max-width: 1200px){
+    .title{
+        padding-left: 0;
+        font-size: 44px;
+    }
+    
+}

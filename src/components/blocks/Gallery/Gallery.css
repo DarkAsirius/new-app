@@ -1,0 +1,25 @@
+/* Gallery.css */
+.gallery-container {
+    display: grid; /* Используем grid для отображения изображений */
+    grid-template-columns: repeat(5, 1fr); /* 5 колонок */
+    grid-template-rows: repeat(3, 1fr); /* 3 строки */
+    gap: 0; /* Нет промежутков между изображениями */
+    overflow: hidden; /* Скрываем переполнение */
+    height: 90vh;
+}
+
+.gallery-item {
+    position: relative; /* Для позиционирования изображения */
+    overflow: hidden; /* Скрываем часть изображения при увеличении */
+}
+
+.gallery-item img {
+    object-fit: cover;
+    width: 100%; /* Изображение занимает 100% ширины родительского элемента */
+    height: 300px; /* Автоматическая высота */
+    transition: transform 0.3s ease; /* Плавный переход для увеличения */
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1); /* Увеличение изображения при наведении */
+}

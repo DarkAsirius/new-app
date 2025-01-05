@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Comforter&family=Pattaya&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pangolin&display=swap');
+
+.services-container {
+    padding: 20px;
+    text-align: center;
+    background: rgba(240, 240, 240, 0.5); /* Полупрозрачный фон подложки */
+    height: 100vh; /* Высота на всю высоту экрана */
+    background: radial-gradient(circle at bottom, var(--phil-bright) 50%, var(--yel-bright) 100%);
+}
+
+.services-title {
+    font-family: "Pangolin", cursive;
+    font-weight: bold;
+    letter-spacing: 0.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    padding-top: 80px;
+    margin-bottom: -150px;
+}
+
+.services-background {
+    font-family: "Pangolin", cursive;
+    object-fit: cover;
+    display: flex;
+    justify-content: center; /* Центрирование по горизонтали */
+    align-items: center; /* Центрирование по вертикали */
+    height: 100vh; /* Высота на всю высоту экрана */
+}
+
+.services-grid {
+    display: grid; /* Используем Grid для размещения карточек */
+    grid-template-columns: repeat(2, 1fr); /* Две колонки */
+    justify-content: center;
+    align-items: center;
+    grid-template-rows: repeat(2, 1fr); /* Две строки */
+    gap: 20px; /* Расстояние между карточками */
+    width: 500px; /* Увеличенная ширина сетки */
+    height: 500px; /* Увеличенная высота сетки */
+}
+
+.service-card {
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 30px; /* Увеличенные отступы */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+    display: flex; /* Flex для центрирования содержимого */
+    flex-direction: column;
+    align-items: center; /* Центрирование по горизонтали */
+    justify-content: center; /* Центрирование по вертикали */
+    width: 250px; /* Увеличенная ширина карточки */
+    height: 250px; /* Увеличенная высота карточки */
+}
+
+.service-card:hover {
+    transform: scale(1.05); /* Эффект при наведении */
+}
+
+.service-icon {
+    font-size: 4rem; /* Увеличенный размер иконки */
+}
+
+.service-title {
+    font-size: 1.5rem;
+    margin: 10px 0;
+}
+
+.service-description {
+    color: #666;
+    text-align: center; /* Центрирование текста описания */
+}
+
+@media screen and (max-width: 768px) {
+    .service-title{
+        padding-right: 0px;
+    }
+
+}
