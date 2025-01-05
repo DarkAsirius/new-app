@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaInstagram, FaFacebook, FaTelegram } from 'react-icons/fa'; // Импортируем иконки социальных сетей
+import { FaInstagram, FaTelegram } from 'react-icons/fa'; // Импортируем иконки социальных сетей
 import './Footer.css'; // Импортируем стили
 
 const Footer = () => {

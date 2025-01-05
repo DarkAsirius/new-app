@@ -5,7 +5,7 @@ import Container from "../../UI/Container"
 const About = () =>{
     return(
         <div className={styles.about} id="about">
-            <img src="../../../photo1.jpg" className={styles.image}></img>
+            <img src="../../../photo1.jpg" className={styles.image} alt="img-1"></img>
             <Container>
                 <div className={styles.overlay}>
                     <img src="../../../logo_white.png" className={styles.logo} alt="Logo" />
