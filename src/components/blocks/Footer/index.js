@@ -8,7 +8,7 @@ const Footer = () => {
             <div className="footer-content">
                 <div className="footer-links">
                     <h3>Контакты</h3>
-                    <p>Телефон: +7 (123) 456-78-90 <br/> +7 (928) 779-69-71 </p>
+                    <p>Телефон: +7 (989) 622-62-03 <br/> +7 (928) 779-69-71 </p>
                 </div>
                 <div className="footer-socials">
                     <h3>Социальные сети</h3>
