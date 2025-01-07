@@ -20,7 +20,7 @@ const Header = () => {
             <nav className={`nav ${isMenuOpen ? 'active' : ''}`}>
                 <a href="#tea">Чай</a>
                 <a href="#gallery">Галерея</a>
-                <a href="#map">Контакты</a>
+                <a href="#map1">Контакты</a>
             </nav>
         </header>
     );

@@ -44,6 +44,7 @@ body {
     text-align: center; /* Центрируем текст */
     text-shadow: 6px 6px 12.5px rgba(0, 0, 0, 0.5);
     letter-spacing: 0.25rem;
+    padding-left: 150px;
 }
 
 .nav {

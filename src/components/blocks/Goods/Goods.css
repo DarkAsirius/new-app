@@ -17,6 +17,7 @@ body {
     align-items: center; /* Центрирование по горизонтали */
     padding: 20px;
     font-family: "Pangolin", cursive;
+    padding-bottom: 50px;
 }
 
 /* Стили для категорий и подкатегорий */
