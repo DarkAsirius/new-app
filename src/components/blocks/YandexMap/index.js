@@ -30,10 +30,10 @@ const YandexMap = ({ coordinates }) => {
     return (
         <div className="map-container">
             <div className="map-title-container">
-                <h2 className="map-title" id="map1">Как добраться?</h2>
+                <h2 className="map-title" id="contact">Как добраться?</h2>
             </div>
             <div className="map-wrapper">
-                <div id="map" className="map" />
+                <div id="map" className="map" /> {/* Убедитесь, что ID совпадает */}
                 <div className="contacts">
                     <Contacts /> {/* Блок контактов справа от карты */}
                 </div>
