@@ -1,4 +1,3 @@
-// src/Header.js
 import React, { useState } from 'react';
 import '../NavBar/NavBar.css';
 

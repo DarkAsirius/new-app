@@ -164,7 +164,7 @@ const TeaBlock = () => {
     <div className="tea-block">
       {!currentCategory ? (
         <div className="categories">
-          <h2 id="tea">Выберите категорию чая</h2>
+          <h2 className='cat-title'>Выберите категорию чая</h2>
           {Object.keys(teaData).map((category) => (
             <button className="btn_goods" key={category} onClick={() => handleCategoryClick(category)}>
               {category}
@@ -173,7 +173,7 @@ const TeaBlock = () => {
         </div>
       ) : (
         <div className="subcategories">
-          <h2>{currentCategory}</h2>
+          <h2 className='cat-title'>{currentCategory}</h2>
           <button className='btn_goods' onClick={handleBackClick}>Назад</button>
           <div className="subcategories-list">
             {teaData[currentCategory].подкатегории.map((subCategory) => {
@@ -208,7 +208,7 @@ const TeaBlock = () => {
       </div>
       <CSSTransition
         in={showModal}
-        timeout={300}
+        timeout={200}
         classNames="modal"
         unmountOnExit
       >
@@ -217,9 +217,9 @@ const TeaBlock = () => {
             <span className="close" onClick={handleCloseModal}>&times;</span>
             {selectedTeaDetail && (
               <>
-                <h2>{selectedTeaDetail.name}</h2>
+                <h2 className='modal-title'>{selectedTeaDetail.name}</h2>
                 <img className="modal-image" src={selectedTeaDetail.image} alt={selectedTeaDetail.name} />
-                <p>{selectedTeaDetail.description}</p>
+                <p className='modal-desc'>{selectedTeaDetail.description}</p>
               </>
             )}
           </div>

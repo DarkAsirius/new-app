@@ -1,7 +1,7 @@
-/* src/Header.css */
 @import url('https://fonts.googleapis.com/css2?family=Comforter&family=Pattaya&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Pangolin&display=swap');
-:root{
+
+:root {
     --phil-bright: #d43754;
     --yel-bright: #e7af2d;
     --phil-grad: #f3d5c1;
@@ -18,12 +18,9 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 10px 40px; /* Увеличиваем отступы слева и справа */
-    /* background: linear-gradient(
-        var(--phil-bright) 35%,
-        var(--yel-bright)); */
     background-color: #444;
     color: white;
-    box-shadow: 0 6px 12.5px rgba(0, 0, 0, 0.5);;
+    box-shadow: 0 6px 12.5px rgba(0, 0, 0, 0.5);
     position: fixed; /* Фиксируем заголовок */
     top: 0; /* Прикрепляем к верхней части экрана */
     left: 0; /* Прикрепляем к левой части экрана */
@@ -47,7 +44,6 @@ body {
     text-align: center; /* Центрируем текст */
     text-shadow: 6px 6px 12.5px rgba(0, 0, 0, 0.5);
     letter-spacing: 0.25rem;
-    padding-left: 200px;
 }
 
 .nav {
@@ -97,7 +93,7 @@ body {
         top: 110px; /* Позиционируем меню в верхней части */
         right: 0; /* Открываем меню справа */
         width: 50%; /* Ширина меню 50% */
-        height: 27vh; /* Высота меню 100vh */
+        height: auto; /* Автоматическая высота меню */
         border-bottom-left-radius: 25px;
         border-bottom-right-radius: 25px;
         background-color: #444;
@@ -115,7 +111,7 @@ body {
     }
 
     .hamburger {
-        display: block; /* Показываем кнопку гамбургера на мобиль ных устройствах */
+        display: block; /* Показываем кнопку гамбургера на мобильных устройствах */
     }
 
     .nav a {
@@ -135,16 +131,18 @@ main {
     padding-top: 60px; /* Учитываем высоту заголовка */
 }
 
-@media (max-width: 515px){
-    .title{
-        font-size: 35px;
+@media (max-width: 1200px) {
+    .title {
+        padding-left: 0;
+        font-size: 40px;
     }
 }
 
-@media (max-width: 1200px){
-    .title{
-        padding-left: 0;
-        font-size: 44px;
+@media (max-width: 515px) {
+    .title {
+        font-size: 25px;
     }
-    
+    .logo {
+        width: 40px;
+    }
 }

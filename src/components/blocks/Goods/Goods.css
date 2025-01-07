@@ -1,13 +1,19 @@
-
 /* Общие стили для блока чая */
+* {
+    box-sizing: border-box; /* Учитываем отступы и границы в ширине */
+}
+
+body {
+    margin: 0;
+    padding-top: 60px; /* Учитываем высоту заголовка */
+}
+
 .tea-block {
     background: radial-gradient(circle at top, var(--phil-bright) 50%, var(--yel-bright) 100%);
-    width: 100wv;
-    height: 100vh;
-    object-fit: cover;
+    height: 100vh; /* Изменено на auto для адаптивности */
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Центрирование по вертикали */
+    justify-content: flex-start; /* Центрирование по вертикали */
     align-items: center; /* Центрирование по горизонтали */
     padding: 20px;
     font-family: "Pangolin", cursive;
@@ -19,6 +25,10 @@
     text-align: center; /* Центрирование текста */
 }
 
+.cat-title{
+    padding-top: 170px; 
+}
+
 h2 {
     font-size: 28px;
     margin-bottom: 15px;
@@ -28,7 +38,7 @@ h2 {
 }
 
 /* Стили для кнопок */
-.btn_goods{
+.btn_goods {
     margin: 15px;
     padding: 12px 20px;
     font-size: 16px;
@@ -50,66 +60,136 @@ h2 {
     transform: translateY(0); /* Возврат на место при нажатии */
 }
 
+/* Стили для карточек чая */
+.tea-cards-container {
+    display: grid; /* Используем grid для отображения карточек */
+    grid-template-columns: repeat(5, 1fr); /* Три колонки по умолчанию */
+    gap: 20px; /* Промежуток между карточками */
+    width: 100%; /* Устанавливаем ширину контейнера */
+    max-height: 540px; /* Устанавливаем максимальную высоту для прокрутки */
+    overflow-y: auto; /* Включаем вертикальную прокрутку */
+    overflow-x: hidden; /* Убираем горизонтальную прокрутку */
+    padding: 20px 0; /* Добавляем отступ сверху и снизу */
+}
+
+/* Стили для карточек */
+.tea-card {
+    border-radius: 8px;
+    padding: 10px;
+    text-align: center;
+    background-color: #333;
+    color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+    width: 200px; /* Фиксированная ширина карточки */
+    height: 100%; /* Фиксированная высота карточки */
+}
+
+.tea-card:hover {
+    transform: scale(1.05); /* Эффект увеличения при наведении */
+}
+
+.tea-card img {
+    width: 60%; /* Устанавливаем ширину изображения на 80% */
+    height: 10vh; /* Высота автоматически подстраивается */
+    max-height: 150px; /* Устанавливаем максимальную высоту изображения */
+    object-fit: cover; /* Обеспечиваем обрезку изображения для сохранения пропорций */
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
 /* Стили для модального окна */
 .modal {
-    font-family: "Pangolin", cursive;
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.7); /* Затемнение фона */
+    background-color: rgba(0, 0, 0, 0.5);
     display: flex;
     justify-content: center;
-    align-items: center;
-    padding: 20px;
-    border-radius: 25px;
-    background-color: #333;
+    align-items: center; /* Центрируем по вертикали */
+    z-index: 1000;
 }
 
 .modal-content {
-    background-color: #4CAF50; /* Цветная подложка */
-    border-radius: 8px;
+    background-color: #333;
+    color: white;
     padding: 20px;
-    max-width: 500px;
-    width: 100%;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-    color: #333; /* Белый текст */
-    text-align: center; /* Центрирование текста */
+    border-radius: 25px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    max-width: 500px; /* Устанавливаем максимальную ширину модального окна */
+    width: 90%; /* Устанавливаем ширину модального окна */
+    height: auto; /* Высота автоматически подстраивается */
+    max-height: 80%; /* Устанавливаем максимальную высоту модального окна */
+    overflow-y: auto; /* Включаем вертикальную прокрутку для модального окна */
 }
 
-.modal img {
-    max-width: 100%;
-    height: auto;
-    margin-bottom: 15px; /* Отступ между картинкой и текстом */
-    border-radius: 5px;
+/* Закрывающая кнопка */
+.close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 20px;
+    cursor: pointer;
 }
 
-.modal h2 {
-    color: white; /* Белый цвет заголовка */
-    margin-bottom: 10px; /* Отступ между заголовком и текстом */
+/* Стили для изображения в модальном окне */
+.modal-image {
+    width: 80%; /* Устанавливаем ширину изображения на 100% */
+    height: auto; /* Высота автоматически подстраивается */
+    display: block; /* Убираем пробелы под изображением */
+    margin: 0 auto; /* Центрируем изображение по горизонтали */
+    border-radius: 35px;
 }
 
-.modal p {
-    margin: 0; /* Убираем отступы у параграфа */
+/* Стили для заголовка и описания в модальном окне */
+.modal-title {
+    color: white;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
 }
 
-/* Стили для кнопки закрытия в модальном окне */
-.modal button {
-    background-color: #f44336; /* Красный цвет для закрытия */
+.modal-desc {
+    color: white;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
 }
 
-.modal button:hover {
-    background-color: #d32f2f; /* Темнее при наведении */
+/* Стили для вертикального скролла */
+.tea-cards-container::-webkit-scrollbar {
+    width: 8px; /* Ширина скролла */
+}
+
+.tea-cards-container::-webkit-scrollbar-thumb {
+    background-color: #888; /* Цвет ползунка */
+    border-radius: 10px; /* Закругление ползунка */
+}
+
+.tea-cards-container::-webkit-scrollbar-thumb:hover {
+    background-color: #555; /* Цвет ползунка при наведении */
 }
 
 /* Адаптивные стили */
 @media (max-width: 768px) {
+    .tea-cards-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 колонки для экранов меньше 768px */
+    }
+
     h2 {
         font-size: 24px;
     }
 
-    button {
+    .cat-title{
+        padding-top: 150px;
+    }
+
+    .btn_goods {
         padding: 10px 15px;
         font-size: 14px;
     }
@@ -121,14 +201,19 @@ h2 {
     .modal-content {
         padding: 15px;
     }
+    
 }
 
 @media (max-width: 480px) {
+    .tea-cards-container {
+        grid-template-columns: 1fr; /* 1 колонка для экранов меньше 480px */
+    }
+
     h2 {
         font-size: 20px;
     }
 
-    button {
+    .btn_goods {
         padding: 8px 12px;
         font-size: 12px;
     }
@@ -137,108 +222,3 @@ h2 {
         font-size: 18px;
     }
 }
-
-.tea-cards-container {
-    font-family: "Pangolin", cursive;
-    display: grid; /* Используем grid для отображения карточек */
-    grid-template-columns: repeat(5, 1fr); /* Две колонки */
-    grid-template-rows: repeat(6, 1fr);
-    grid-auto-rows: minmax(150px, auto); /* Автоматическая высота строк с минимальной высотой */
-    gap: 20px; /* Промежуток между карточками */
-    overflow-y: auto; /* Включаем вертикальную прокрутку */
-    width: 100%; /* Устанавливаем ширину контейнера */
-    max-height: 540px; /* Устанавливаем максимальную высоту для прокрутки */
-    padding: 20px 0; /* Добавляем отступ сверху и снизу */
-}
-
-.tea-card {
-    border-radius: 8px;
-    padding: 10px;
-    margin: 0; /* Убираем отступы между карточками */
-    text-align: center;
-    background-color: #333;
-    color: white;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    height: 240px;
-    width: 340px;
-}
-
-/* Стили для ползунка прокрутки */
-.tea-cards-container::-webkit-scrollbar {
-    width: 10px; /* Ширина ползунка */
-}
-
-.tea-cards-container::-webkit-scrollbar-track {
-    background: #f1f1f1; /* Цвет фона трека */
-}
-
-.tea-cards-container::-webkit-scrollbar-thumb {
-    background: #888; /* Цвет ползунка */
-    border-radius: 5px; /* Закругление углов ползунка */
-}
-
-.tea-cards-container::-webkit-scrollbar-thumb:hover {
-    background: #555; /* Цвет ползунка при наведении */
-}
-
-.tea-card img {
-    object-fit: cover;
-    margin: 15px;
-    width: 150px;
-    max-width: 200px;
-    height: 110px; 
-    border-radius: 4px;
-}
-
-.modal {
-    position: fixed;
-    top: 0;
-    left:  0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-  }
-  
-  .modal-content {
-    background-color: #333;
-    color: white;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    position: relative;
-  }
-  
-  .close {
-    position: absolute;
-    top: 10px;
-    right: 15px;
-    font-size: 20px;
-    cursor: pointer;
-  }
-  
-  .modal-image {
-    width: 350px; /* Уменьшите размер изображения */
-    height: auto;
-  }
-  
-  .modal-enter {
-    opacity: 0;
-  }
-  
-  .modal-enter-active {
-    opacity: 1;
-    transition: opacity 300ms;
-  }
-  
-  .modal-exit {
-    opacity: 1;
-  }
-  
-  .modal-exit-active {
-    opacity: 0;
-    transition: opacity 300ms;
-  }

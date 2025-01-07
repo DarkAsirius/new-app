@@ -1,11 +1,11 @@
 /* Gallery.css */
 .gallery-container {
     display: grid; /* Используем grid для отображения изображений */
-    grid-template-columns: repeat(5, 1fr); /* 5 колонок */
-    grid-template-rows: repeat(3, 1fr); /* 3 строки */
+    grid-template-columns: repeat(5, 1fr); /* 5 колонок по умолчанию */
+    grid-template-rows: auto; /* Автоматическая высота строк */
     gap: 0; /* Нет промежутков между изображениями */
     overflow: hidden; /* Скрываем переполнение */
-    height: 90vh;
+    height: auto; /* Высота автоматически подстраивается под содержимое */
 }
 
 .gallery-item {
@@ -22,4 +22,29 @@
 
 .gallery-item:hover img {
     transform: scale(1.1); /* Увеличение изображения при наведении */
+}
+
+/* Медиа-запросы для адаптивности */
+@media (max-width: 1200px) {
+    .gallery-container {
+        grid-template-columns: repeat(4, 1fr); /* 4 колонки для экранов меньше 1200px */
+    }
+}
+
+@media (max-width: 992px) {
+    .gallery-container {
+        grid-template-columns: repeat(3, 1fr); /* 3 колонки для экранов меньше 992px */
+    }
+}
+
+@media (max-width: 768px) {
+    .gallery-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 колонки для экранов меньше 768px */
+    }
+}
+
+@media (max-width: 576px) {
+    .gallery-container {
+        grid-template-columns: 1fr; /* 1 колонка для экранов меньше 576px */
+    }
 }
