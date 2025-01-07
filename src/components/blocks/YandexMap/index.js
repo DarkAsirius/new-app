@@ -5,21 +5,24 @@ import Contacts from '../Contacts'; // Импортируем блок конт�
 const YandexMap = ({ coordinates }) => {
     useEffect(() => {
         const ymaps = window.ymaps;
-    
+
         if (ymaps) {
             ymaps.ready(() => {
-                setTimeout(() => {
-                    const map = new ymaps.Map('map', {
-                        center: coordinates,
-                        zoom: 14,
-                    });
-    
-                    const placemark = new ymaps.Placemark(coordinates, {
-                        balloonContent: 'Ваше назначение',
-                    });
-    
-                    map.geoObjects.add(placemark);
-                }, 100); // Задержка в 100 мс
+                const map = new ymaps.Map('map', {
+                    center: coordinates,
+                    zoom: 14,
+                });
+
+                const placemark = new ymaps.Placemark(coordinates, {
+                    balloonContent: 'Ваше назначение',
+                });
+
+                map.geoObjects.add(placemark);
+
+                // Очистка карты при размонтировании компонента
+                return () => {
+                    map.destroy(); // Убедитесь, что карта уничтожается
+                };
             });
         }
     }, [coordinates]);
