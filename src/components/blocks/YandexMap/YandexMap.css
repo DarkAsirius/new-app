@@ -65,3 +65,19 @@ body {
         margin-bottom: 20px; /* Добавляем отступ снизу */
     }
 }
+
+.map-container {
+    border: 1px solid red; /* Временная граница для отладки */
+}
+
+.map-wrapper {
+    border: 1px solid blue; /* Временная граница для отладки */
+}
+
+.map {
+    border: 1px solid green; /* Временная граница для отладки */
+}
+
+.contacts {
+    border: 1px solid yellow; /* Временная граница для отладки */
+}
