@@ -1,5 +1,7 @@
 /* Gallery.css */
 .gallery-container {
+    background: radial-gradient(circle at top, var(--phil-bright) 50%, var(--yel-bright) 100%);
+    height: auto; /* Изменено на auto для адаптивности */
     display: flex;
     flex-direction: column; /* Вертикальное расположение рядов */
     align-items: center; /* Центрируем по горизонтали */
