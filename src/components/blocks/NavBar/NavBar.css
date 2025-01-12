@@ -1,6 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Comforter&family=Pattaya&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Pangolin&display=swap');
-
 :root {
     --phil-bright: #d43754;
     --yel-bright: #e7af2d;
@@ -10,7 +7,6 @@
 
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
 }
 
 .header {
@@ -36,15 +32,14 @@ body {
 
 .title {
     flex-grow: 1; /* Позволяем заголовку занимать доступное пространство */
-    font-family: "Comforter", cursive;
+    font-family: "Caviar", sans-serif;
     font-size: 50px;
     font-style: normal;
     color: var(--yel-bright);
-    font-weight: 600;
     text-align: center; /* Центрируем текст */
     text-shadow: 6px 6px 12.5px rgba(0, 0, 0, 0.5);
     letter-spacing: 0.25rem;
-    padding-left: 150px;
+    padding-left: 240px;
 }
 
 .nav {
@@ -53,10 +48,9 @@ body {
 }
 
 .nav a { 
-    font-weight: 550;
     font-style: normal;   
     font-size: 25px;
-    font-family: "Pangolin", cursive;
+    font-family: "Caviar" sans-serif;
     color: var(--yel-bright);
     text-decoration: none;
     transition: 0.3s;
@@ -135,7 +129,7 @@ main {
 @media (max-width: 1200px) {
     .title {
         padding-left: 0;
-        font-size: 40px;
+        font-size: 30px;
     }
 }
 

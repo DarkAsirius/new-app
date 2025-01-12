@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { CSSTransition } from 'react-transition-group';
+import Modal from './Modal';
 import '../Goods/Goods.css'; // Подключаем CSS для стилизации
 
 const teaData = {
@@ -206,25 +206,11 @@ const TeaBlock = () => {
           </div>
         </div>
       </div>
-      <CSSTransition
-        in={showModal}
-        timeout={200}
-        classNames="modal"
-        unmountOnExit
-      >
-        <div className="modal">
-          <div className="modal-content">
-            <span className="close" onClick={handleCloseModal}>&times;</span>
-            {selectedTeaDetail && (
-              <>
-                <h2 className='modal-title'>{selectedTeaDetail.name}</h2>
-                <img className="modal-image" src={selectedTeaDetail.image} alt={selectedTeaDetail.name} />
-                <p className='modal-desc'>{selectedTeaDetail.description}</p>
-              </>
-            )}
-          </div>
-        </div>
-      </CSSTransition>
+      <Modal 
+      showModal={showModal} 
+      handleCloseModal={handleCloseModal} 
+      selectedTeaDetail={selectedTeaDetail} 
+      />
     </div> 
   );
 };

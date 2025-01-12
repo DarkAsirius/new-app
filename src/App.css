@@ -87,3 +87,28 @@ label {
 legend {
 	display: block;
 }
+
+@font-face {
+    font-family: 'Caviar';
+    src: url('../public/fonts/CaviarDreams.ttf') format('ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Caviar Bold';
+    src: url('../public/fonts/CaviarDreams_Bold.ttf') format('ttf');
+    font-weight: bold;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Caviar Bold Italic';
+    src: url('../public/fonts/CaviarDreams_BoldItalic.ttf') format('ttf');
+    font-weight: bold;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Caviar Italic';
+    src: url('../public/fonts/CaviarDreams_Italic.ttf') format('ttf');
+    font-weight: normal;
+    font-style: italic;
+}

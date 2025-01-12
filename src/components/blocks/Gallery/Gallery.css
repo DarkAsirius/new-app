@@ -1,11 +1,19 @@
 /* Gallery.css */
 .gallery-container {
-    display: grid; /* Используем grid для отображения изображений */
-    grid-template-columns: repeat(5, 1fr); /* 5 колонок по умолчанию */
-    grid-template-rows: auto; /* Автоматическая высота строк */
-    gap: 0; /* Нет промежутков между изображениями */
-    overflow: hidden; /* Скрываем переполнение */
-    height: auto; /* Высота автоматически подстраивается под содержимое */
+    display: flex;
+    flex-direction: column; /* Вертикальное расположение рядов */
+    align-items: center; /* Центрируем по горизонтали */
+    max-width: 1200px; /* Максимальная ширина контейнера */
+    margin: 50px auto; /* Центрируем контейнер */
+    background-color: #333; /* Цвет фона для подложки */
+    padding: 20px; /* Отступы вокруг галереи */
+    border-radius: 10px; /* Закругленные углы */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Тень для глубины */
+}
+
+.gallery-row {
+    display: flex; /* Используем flex для рядов */
+    width: 100%; /* Ширина ряда на 100% */
 }
 
 .gallery-item {
@@ -13,10 +21,45 @@
     overflow: hidden; /* Скрываем часть изображения при увеличении */
 }
 
+.item-1 {
+    flex: 1; /* 1/3 ширины */
+    max-width: 33.33%; /* Максимальная ширина 1/3 */
+}
+
+.item-2 {
+    flex: 2; /* Остальная ширина */
+    max-width: 66.67%; /* Максимальная ширина 2/3 */
+}
+
+.item-3,
+.item-8,
+.item-6 {
+    flex: 2; /* 2/3 ширины */
+    max-width: 66.67%; /* Максимальная ширина 2/3 */
+}
+
+.item-4 {
+    flex: 1; /* Вертикальное изображение */
+    max-width: 33.33%; /* Максимальная ширина 1/3 */
+}
+
+.item-5 {
+    flex: 1; /* 1/3 ширины */
+    max-width: 33.33%; /* Максимальная ширина 1/3 */
+}
+
+
+
+.item-9,
+.item-10 {
+    flex: 1; /* 1/3 ширины для всех изображений в четвертом ряду */
+    max-width: 33.33%; /* Максимальная ширина 1/3 */
+}
+
 .gallery-item img {
     object-fit: cover;
     width: 100%; /* Изображение занимает 100% ширины родительского элемента */
-    height: 300px; /* Автоматическая высота */
+    height:  300px; /* Автоматическая высота */
     transition: transform 0.3s ease; /* Плавный переход для увеличения */
 }
 
@@ -27,24 +70,12 @@
 /* Медиа-запросы для адаптивности */
 @media (max-width: 1200px) {
     .gallery-container {
-        grid-template-columns: repeat(4, 1fr); /* 4 колонки для экранов меньше 1200px */
+        max-width: 100%; /* Убираем максимальную ширину для меньших экранов */
     }
 }
 
 @media (max-width: 992px) {
-    .gallery-container {
-        grid-template-columns: repeat(3, 1fr); /* 3 колонки для экранов меньше 992px */
-    }
-}
-
-@media (max-width: 768px) {
-    .gallery-container {
-        grid-template-columns: repeat(2, 1fr); /* 2 колонки для экранов меньше 768px */
-    }
-}
-
-@media (max-width: 576px) {
-    .gallery-container {
-        grid-template-columns: 1fr; /* 1 колонка для экранов меньше 576px */
+    .item-1, .item-2, .item-3, .item-4, .item-5, .item-6, .item-7, .item-8, .item-9, .item-10 {
+        max-width: 100%; /* Все элементы занимают 100% ширины на маленьких экранах */
     }
 }

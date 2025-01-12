@@ -6,6 +6,7 @@
 }
 
 .footer-content {
+    font-family: "Caviar" sans-serif;
     display: flex; /* Используем flexbox для выравнивания */
     justify-content: space-between; /* Распределяем пространство между элементами */
     margin-bottom: 10px; /* Отступ снизу */

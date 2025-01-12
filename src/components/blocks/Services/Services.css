@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Comforter&family=Pattaya&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Pangolin&display=swap');
+
 
 .services-container {
     padding: 20px;
@@ -10,7 +9,15 @@
 }
 
 .services-title {
-    font-family: "Pangolin", cursive;
+    font-family: "Caviar", sans-serif;
+    font-weight: bold;
+    color: white; /* Цвет текста */
+    text-shadow: 
+        -1px -1px 0 black,  
+         1px -1px 0 black,
+        -1px  1px 0 black,
+         1px  1px 0 black; /* Обводка черного цвета */
+    letter-spacing: 0.2rem;
     font-weight: bold;
     letter-spacing: 0.2rem;
     display: flex;
@@ -22,7 +29,7 @@
 }
 
 .services-background {
-    font-family: "Pangolin", cursive;
+    font-family: "Caviar", sans-serif;
     object-fit: cover;
     display: flex;
     justify-content: center; /* Центрирование по горизонтали */
@@ -45,23 +52,26 @@
     background: #f9f9f9;
     border: 1px solid #ddd;
     border-radius: 8px;
-    padding: 30px; /* Увеличенные отступы */
+    padding: 20px; /* Уменьшенные отступы */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s;
     display: flex; /* Flex для центрирования содержимого */
-    flex-direction: column;
+    flex-direction: column; /* Вертикальное расположение элементов */
     align-items: center; /* Центрирование по горизонтали */
-    justify-content: center; /* Центрирование по вертикали */
+    justify-content: flex-start; /* Начало по вертикали */
     width: 250px; /* Увеличенная ширина карточки */
-    height: 250px; /* Увеличенная высота карточки */
+    height: 290px; /* Увеличенная высота карточки */
 }
 
 .service-card:hover {
-    transform: scale(1.05); /* Эффект при наведении */
+    transform: scale(1.05); /* Эффект увеличения при наведении */
 }
 
 .service-icon {
-    font-size: 4rem; /* Увеличенный размер иконки */
+    width: 130px; /* Фиксированная ширина изображения */
+    height: 130px; /* Фиксированная высота изображения */
+    object-fit: cover; /* Обеспечивает правильное обрезание изображения */
+    margin-bottom: 10px; /* Отступ снизу для разделения с текстом */
 }
 
 .service-title {
@@ -72,6 +82,8 @@
 .service-description {
     color: #666;
     text-align: center; /* Центрирование текста описания */
+    flex-grow: 1; /* Позволяет тексту занимать оставшееся пространство */
+    margin-top: 10px; /* Отступ сверху для разделения с заголовком */
 }
 
 @media screen and (max-width: 768px) {

@@ -1,29 +1,26 @@
 import React from 'react';
-import { FaCoffee, FaLeaf} from 'react-icons/fa';
-import { IconTeapot } from '@tabler/icons-react';
-import TeaCeremonyMasterIcon from './TeaMaster.js';
 import './Services.css'; // Импортируем CSS файл для стилей
 
 const servicesData = [
     {
         title: 'Чай в стакане',
         description: 'Можете заварить чай и взять его с собой',
-        icon: <FaCoffee size={60} />
+        icon: <img src="../../../ServicesIcons/чай стакан.png"></img>
     },
     {
         title: 'Чай с собой',
         description: 'Можете взять чай на вынос и распить его дома',
-        icon: <FaLeaf size={60} color="#4CAF50" />
+        icon: <img src="../../../ServicesIcons/чайнавынос.png"></img>
     },
     {
         title: 'Пин Ча',
         description: 'Распитие чая проливами с нашей посудой',
-        icon: <TeaCeremonyMasterIcon />
+        icon: <img src="../../../ServicesIcons/пинча.png"></img>
     },
     {
         title: 'Церемония',
         description: 'Проведение частных и выездных чайных церемоний',
-        icon:  <IconTeapot size={60} color="#D2691E" />
+        icon: <img src="../../../ServicesIcons/черемонии.png"></img>
     }
 ];
 
