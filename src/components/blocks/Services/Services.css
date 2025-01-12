@@ -89,7 +89,6 @@
 
     .services-title {
         font-size: 1.5rem; /* Уменьшаем размер шрифта заголовка */
-        margin-bottom: 20px; /* Увеличиваем отступ снизу */
     }
 
     .service-card {
