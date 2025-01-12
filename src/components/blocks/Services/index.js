@@ -5,22 +5,22 @@ const servicesData = [
     {
         title: 'Чай в стакане',
         description: 'Можете заварить чай и взять его с собой',
-        icon: <img src="../../../ServicesIcons/чай стакан.png"></img>
+        icon: <img src="../../../ServicesIcons/чай стакан.png" alt="cup"></img>
     },
     {
         title: 'Чай с собой',
         description: 'Можете взять чай на вынос и распить его дома',
-        icon: <img src="../../../ServicesIcons/чайнавынос.png"></img>
+        icon: <img src="../../../ServicesIcons/чайнавынос.png" alt="home"></img>
     },
     {
         title: 'Пин Ча',
         description: 'Распитие чая проливами с нашей посудой',
-        icon: <img src="../../../ServicesIcons/пинча.png"></img>
+        icon: <img src="../../../ServicesIcons/пинча.png" alt="pincha"></img>
     },
     {
         title: 'Церемония',
         description: 'Проведение частных и выездных чайных церемоний',
-        icon: <img src="../../../ServicesIcons/черемонии.png"></img>
+        icon: <img src="../../../ServicesIcons/черемонии.png" alt="ceremony"></img>
     }
 ];
 
