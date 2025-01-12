@@ -81,17 +81,19 @@
     .overlay {
         flex-direction: column; /* Изменяем направление на колонку для мобильных устройств */
         padding: 10px; /* Уменьшаем отступы */
+        align-items: flex-start; /* Выравниваем элементы по левому краю */
     }
 
     .logo {
-        width: 33vh;  /* Добавляем отступ снизу */
+        width: 33vh; 
+        margin-bottom: 20px; /* Добавляем отступ снизу */
         position: relative;
         padding-top: 20px; /* Уменьшаем отступ сверху */
     }
     
     .text {
         position: relative;
-        bottom: 0; /* Убираем смещение вниз */
+        bottom: 30px; /* Поднимаем текст выше */
         padding: 0 10px; /* Добавляем отступы по бокам */
     }
 
@@ -112,7 +114,7 @@
 
 @media screen and (max-width: 480px) {
     .deviz {
-        font-size: 24px; /* Уменьшаем размер шрифта для очень маленьких экранов */
+        font-size: 24px; /* Уменьша ем размер шрифта для очень маленьких экранов */
     }
 
     .head {
