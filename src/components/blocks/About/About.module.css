@@ -84,8 +84,7 @@
     }
 
     .logo {
-        width: 33vh; 
-        margin-bottom: 20px; /* Добавляем отступ снизу */
+        width: 33vh;  /* Добавляем отступ снизу */
         position: relative;
         padding-top: 20px; /* Уменьшаем отступ сверху */
     }
