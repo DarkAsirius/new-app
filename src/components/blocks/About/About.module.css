@@ -1,18 +1,18 @@
-:root{
+:root {
     --phil-bright: #d43754;
     --yel-bright: #e7af2d;
     --phil-grad: #f3d5c1;
     --yel-grad: #f8e8ba;
 }
 
-.about{
+.about {
     position: relative; /* Позволяет изображению занимать всю область родителя */
     width: 100%; /* Ширина 100% от ширины окна */
     height: 100vh; /* Высота 100% от высоты окна */
     overflow: hidden;
 }
 
-.image{
+.image {
     position: absolute; /* Позволяет изображению занимать всю область родителя */
     top: 50%; /* Центрирует изображение по вертикали */
     left: 50%; /* Центрирует изображение по горизонтали */
@@ -53,16 +53,16 @@
     z-index: 2;
 }
 
-.deviz{
+.deviz {
     font-size: 40px;
     margin-bottom: 15px;
 }
 
-.head{
+.head {
     width: 600px;
 }
 
-.desc{
+.desc {
     width: 500px;
     font-size: 22px;
 }
@@ -78,21 +78,57 @@
 }
 
 @media screen and (max-width: 768px) {
-    .overlay{
-        flex-direction: column;
-        padding-bottom: 0;
-        margin-bottom: 0;
+    .overlay {
+        flex-direction: column; /* Изменяем направление на колонку для мобильных устройств */
+        padding: 10px; /* Уменьшаем отступы */
     }
 
-    .logo{
-        width:33vh; 
-        margin-bottom: 0;
+    .logo {
+        width: 33vh; 
+        margin-bottom: 20px; /* Добавляем отступ снизу */
         position: relative;
-        padding-top: 60px;
+        padding-top: 20px; /* Уменьшаем отступ сверху */
     }
     
-    .text{
+    .text {
         position: relative;
-        bottom: 90px;
+        bottom: 0; /* Убираем смещение вниз */
+        padding: 0 10px; /* Добавляем отступы по бокам */
+    }
+
+    .deviz {
+        font-size: 30px; /* Уменьшаем размер шрифта для мобильных устройств */
+    }
+
+    .head {
+        width: 100%; /* Убираем фиксированную ширину */
+        font-size: 24px; /* Уменьшаем размер шрифта */
+    }
+
+    .desc {
+        width: 100%; /* Убираем фиксированную ширину */
+        font-size: 18px; /* Уменьшаем размер шрифта */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .deviz {
+        font-size: 24px; /* Уменьшаем размер шрифта для очень маленьких экранов */
+    }
+
+    .head {
+        font-size: 20px; /* Уменьшаем размер шрифта для заголовка */
+    }
+
+    .desc {
+        font-size: 16px; /* Уменьшаем размер шрифта для описания */
+    }
+
+    .logo {
+        width: 25vh; /* Уменьшаем ширину логотипа для маленьких экранов */
+    }
+
+    .overlay {
+        padding: 5px; /* Уменьшаем отступы для мобильных устройств */
     }
 }
