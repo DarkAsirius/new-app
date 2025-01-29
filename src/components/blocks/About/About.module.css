@@ -32,19 +32,8 @@
     justify-content: space-around; /* Размещаем текст слева и логотип справа */
     align-items: center; /* Центрируем по вертикали */
     padding: 20px; /* Отступы вокруг содержимого */
-    color: white; /* Цвет текста */
+    color: #d29275; /* Цвет текста */
     z-index: 1;
-}
-
-.overlay::before {
-    content: ""; /* Создаем пустой контент для псевдоэлемента */
-    position: absolute; /* Позиционируем его абсолютно */
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5); /* Затемнение с помощью полупрозрачного черного цвета */
-    z-index: 0; /* Устанавливаем z-index ниже, чем у текста и логотипа */
 }
 
 .logo {
@@ -54,17 +43,12 @@
 }
 
 .deviz {
-    font-size: 40px;
+    font-size: 60px;
     margin-bottom: 15px;
 }
 
 .head {
-    width: 600px;
-}
-
-.desc {
-    width: 500px;
-    font-size: 22px;
+    width: 900px;
 }
 
 .text {

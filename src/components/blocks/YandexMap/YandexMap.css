@@ -19,6 +19,15 @@ body {
     padding: 0 20px;
 }
 
+.map-title-container {
+    background-color: #fff;
+    padding: 10px 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+    text-align: center;
+}
+
 .map-title {
     color: #333;
     margin: 0;
