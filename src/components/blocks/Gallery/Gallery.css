@@ -1,16 +1,20 @@
 /* Gallery.css */
+*{
+    box-sizing: border-box;
+}
+.gallery{
+    background: linear-gradient(90deg, rgba(205,143,118,1) 0%, rgba(234,182,97,1) 100%);
+    height: 135vh;
+    display: flex;
+}
 .gallery-container {
-    background: radial-gradient(circle at top, var(--phil-bright) 50%, var(--yel-bright) 100%);
+    object-fit: cover;
     height: auto; /* Изменено на auto для адаптивности */
     display: flex;
     flex-direction: column; /* Вертикальное расположение рядов */
     align-items: center; /* Центрируем по горизонтали */
     max-width: 1200px; /* Максимальная ширина контейнера */
-    margin: 50px auto; /* Центрируем контейнер */
-    background-color: #333; /* Цвет фона для подложки */
-    padding: 20px; /* Отступы вокруг галереи */
-    border-radius: 10px; /* Закругленные углы */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Тень для глубины */
+    margin: auto; /* Центрируем контейнер */
 }
 
 .gallery-row {

@@ -5,11 +5,12 @@
 
 body {
     margin: 0;/* Учитываем высоту заголовка */
+    
+    height: 100%;
 }
 
 .tea-block {
-    background: radial-gradient(circle at top, var(--phil-bright) 50%, var(--yel-bright) 100%);
-    height: auto; /* Изменено на auto для адаптивности */
+    background:linear-gradient(90deg, rgba(234,182,97,1) 0%, rgba(205,143,118,1) 100%);
     display: flex;
     flex-direction: column;
     justify-content: flex-start; /* Центрирование по вертикали */
@@ -70,7 +71,7 @@ body {
     grid-template-columns: repeat(5, 1fr); /* Три колонки по умолчанию */
     gap: 20px; /* Промежуток между карточками */
     width: 100%; /* Устанавливаем ширину контейнера */
-    max-height: 540px; /* Устанавливаем максимальную высоту для прокрутки */
+    max-height: 940px; /* Устанавливаем максимальную высоту для прокрутки */
     overflow-y: auto; /* Включаем вертикальную прокрутку */
     overflow-x: hidden; /* Убираем горизонтальную прокрутку */
     padding: 20px 0; /* Добавляем отступ сверху и снизу */

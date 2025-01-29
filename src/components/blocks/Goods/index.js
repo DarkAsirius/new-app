@@ -164,7 +164,6 @@ const TeaBlock = () => {
     <div className="tea-block">
       {!currentCategory ? (
         <div className="categories">
-          <h2 className='cat-title'>Выберите категорию чая</h2>
           {Object.keys(teaData).map((category) => (
             <button className="btn_goods" key={category} onClick={() => handleCategoryClick(category)}>
               {category}

@@ -14,7 +14,7 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 10px 40px; /* Увеличиваем отступы слева и справа */
-    background-color: #444;
+    background-color: #fff;
     color: white;
     box-shadow: 0 6px 12.5px rgba(0, 0, 0, 0.5);
     position: fixed; /* Фиксируем заголовок */
@@ -35,9 +35,9 @@ body {
     font-family: "Caviar", sans-serif;
     font-size: 50px;
     font-style: normal;
-    color: var(--yel-bright);
+    color: #ebb661;
     text-align: center; /* Центрируем текст */
-    text-shadow: 6px 6px 12.5px rgba(0, 0, 0, 0.5);
+    text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
     letter-spacing: 0.25rem;
     padding-left: 240px;
 }
@@ -51,13 +51,14 @@ body {
     font-style: normal;   
     font-size: 25px;
     font-family: "Caviar" sans-serif;
-    color: var(--yel-bright);
+    color: #ebb661;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
     text-decoration: none;
     transition: 0.3s;
 }
 
 .nav a:hover {
-    color: #f8e8ba;
+    color: var(--phil-bright);
     transition: 0.3s;
 }
 

@@ -7,7 +7,7 @@ const Contacts = () => {
         <div className="contact-block">
             <h2 className="contact-title">Контакты</h2>
             <div className="contact-item">
-                <FaMapMarkerAlt className="contact-icon" />
+                <FaMapMarkerAlt className="contact-icon ctn-1" />
                 <div className="contact-info">
                     <h3>Адрес</h3>
                     <p>Большая Садовая 101, Ростов-на-Дону, Россия</p>

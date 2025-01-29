@@ -27,7 +27,6 @@ const servicesData = [
 const Services = () => {
     return (
         <div className="services-container">
-            <h2 className="services-title">Наши Услуги</h2>
             <div className="services-background">
                 <div className="services-grid">
                     {servicesData.map((service, index) => (

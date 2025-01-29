@@ -9,24 +9,27 @@ const images = [
 
 const Gallery = () => {
     return (
-        <div className="gallery-container" id="gallery">
-            <div className="gallery-row row-1">
-                <div className="gallery-item item-1"><img src={images[0]} alt="gal 1" /></div>
-                <div className="gallery-item item-2"><img src={images[1]} alt="gal 2" /></div>
-            </div>
-            <div className="gallery-row row-2">
-                <div className="gallery-item item-3"><img src={images[2]} alt="gal 3" /></div>
-                <div className="gallery-item item-4"><img src={images[3]} alt="gal 4" /></div>
-            </div>
-            <div className="gallery-row row-3">
-                <div className="gallery-item item-5"><img src={images[4]} alt="gal 5" /></div>
-                <div className="gallery-item item-6"><img src={images[5]} alt="gal 6" /></div>
-            </div>
-            <div className="gallery-row row-4">
-                <div className="gallery-item item-8"><img src={images[7]} alt="gal 7" /></div>
-                <div className="gallery-item item-9"><img src={images[6]} alt="gal 8" /></div>
+        <div className="gallery">
+            <div className="gallery-container" id="gallery">
+                <div className="gallery-row row-1">
+                    <div className="gallery-item item-1"><img src={images[0]} alt="gal 1" /></div>
+                    <div className="gallery-item item-2"><img src={images[1]} alt="gal 2" /></div>
+                </div>
+                <div className="gallery-row row-2">
+                    <div className="gallery-item item-3"><img src={images[2]} alt="gal 3" /></div>
+                    <div className="gallery-item item-4"><img src={images[3]} alt="gal 4" /></div>
+                </div>
+                <div className="gallery-row row-3">
+                    <div className="gallery-item item-5"><img src={images[4]} alt="gal 5" /></div>
+                    <div className="gallery-item item-6"><img src={images[5]} alt="gal 6" /></div>
+                </div>
+                <div className="gallery-row row-4">
+                    <div className="gallery-item item-8"><img src={images[7]} alt="gal 7" /></div>
+                    <div className="gallery-item item-9"><img src={images[6]} alt="gal 8" /></div>
+                </div>
             </div>
         </div>
+        
     );
 };
 
