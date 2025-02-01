@@ -9,6 +9,23 @@ body {
     margin: 0;
 }
 
+@font-face {
+	font-family: 'Caviar'; 
+	src: url(../../../../public/fonts/CaviarDreams.ttf); 
+}
+@font-face {
+	font-family: 'Caviar bold'; 
+	src: url(../../../../public/fonts/CaviarDreams_Bold.ttf); 
+}
+@font-face {
+	font-family: 'Caviar boldItalic'; 
+	src: url(../../../../public/fonts/CaviarDreams_BoldItalic.ttf); 
+}
+@font-face {
+	font-family: 'Caviar Italic'; 
+	src: url(../../../../public/fonts/CaviarDreams_Italic.ttf); 
+}
+
 .header {
     display: flex;
     justify-content: space-between;
@@ -32,7 +49,7 @@ body {
 
 .title {
     flex-grow: 1; /* Позволяем заголовку занимать доступное пространство */
-    font-family: "Caviar", sans-serif;
+    font-family: 'Caviar', sans-serif;
     font-size: 50px;
     font-style: normal;
     color: #ebb661;

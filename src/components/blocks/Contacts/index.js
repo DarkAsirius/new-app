@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaPhone, FaMapMarkerAlt, FaInstagram } from 'react-icons/fa';
+import { FaPhone, FaMapMarkerAlt, FaInstagram, FaTelegram } from 'react-icons/fa';
 import './Contacts.css'; // Импортируем стили
 
 const Contacts = () => {
@@ -25,6 +25,13 @@ const Contacts = () => {
                 <FaInstagram className="contact-icon" />
                 <div className="contact-info">
                     <h3>Instagram</h3>
+                    <p>@chay_nazare</p>
+                </div>
+            </div>
+            <div className="contact-item">
+                <FaTelegram className="contact-icon" />
+                <div className="contact-info">
+                    <h3>Telegram</h3>
                     <p>@chay_nazare</p>
                 </div>
             </div>

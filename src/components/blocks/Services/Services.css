@@ -4,6 +4,22 @@
     height: 100vh; /* Высота на всю высоту экрана */
     background:linear-gradient(90deg, rgba(234,182,97,1) 0%, rgba(205,143,118,1) 100%);
 }
+@font-face {
+	font-family: 'Caviar'; 
+	src: url(../../../../public/fonts/CaviarDreams.ttf); 
+}
+@font-face {
+	font-family: 'Caviar bold'; 
+	src: url(../../../../public/fonts/CaviarDreams_Bold.ttf); 
+}
+@font-face {
+	font-family: 'Caviar boldItalic'; 
+	src: url(../../../../public/fonts/CaviarDreams_BoldItalic.ttf); 
+}
+@font-face {
+	font-family: 'Caviar Italic'; 
+	src: url(../../../../public/fonts/CaviarDreams_Italic.ttf); 
+}
 
 .services-title {
     font-family: "Caviar", sans-serif;

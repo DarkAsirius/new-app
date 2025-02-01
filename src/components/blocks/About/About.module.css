@@ -5,6 +5,24 @@
     --yel-grad: #f8e8ba;
 }
 
+
+@font-face {
+	font-family: 'Caviar'; 
+	src: url(../../../../public/fonts/CaviarDreams.ttf); 
+}
+@font-face {
+	font-family: 'Caviar bold'; 
+	src: url(../../../../public/fonts/CaviarDreams_Bold.ttf); 
+}
+@font-face {
+	font-family: 'Caviar boldItalic'; 
+	src: url(../../../../public/fonts/CaviarDreams_BoldItalic.ttf); 
+}
+@font-face {
+	font-family: 'Caviar Italic'; 
+	src: url(../../../../public/fonts/CaviarDreams_Italic.ttf); 
+}
+
 .about {
     position: relative; /* Позволяет изображению занимать всю область родителя */
     width: 100%; /* Ширина 100% от ширины окна */
@@ -98,7 +116,8 @@
 
 @media screen and (max-width: 480px) {
     .deviz {
-        font-size: 40px; /* Уменьшаем размер шрифта для очень маленьких экранов }
+        font-size: 40px; /* Уменьшаем размер шрифта для очень маленьких экранов*/
+    }
 
     .head {
         font-size: 20px; /* Уменьшаем размер шрифта для заголовка */

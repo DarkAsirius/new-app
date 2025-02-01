@@ -1,3 +1,20 @@
+@font-face {
+	font-family: 'Caviar'; 
+	src: url(../../../../public/fonts/CaviarDreams.ttf); 
+}
+@font-face {
+	font-family: 'Caviar bold'; 
+	src: url(../../../../public/fonts/CaviarDreams_Bold.ttf); 
+}
+@font-face {
+	font-family: 'Caviar boldItalic'; 
+	src: url(../../../../public/fonts/CaviarDreams_BoldItalic.ttf); 
+}
+@font-face {
+	font-family: 'Caviar Italic'; 
+	src: url(../../../../public/fonts/CaviarDreams_Italic.ttf); 
+}
+
 .contact-block {
     background-color: #f9f9f9;
     border-radius: 8px;
@@ -12,16 +29,16 @@
 }
 
 .contact-title {
+    font-family: 'Caviar bold', sans-serif;
     font-size: 28px;
-    font-weight: bold;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     text-align: left;
 }
 
 .contact-item {
     display: flex;
     align-items: center;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
     text-align: left;
 }
 
@@ -36,14 +53,15 @@
 }
 
 .contact-info h3 {
-    font-size: 24px;
-    font-weight: bold;
+    font-family: 'Caviar bold', sans-serif;
+    font-size: 18px;
     margin: 0;
     text-align: left;
 }
 
 .contact-info p {
-    font-size: 20px;
+    font-family: 'Caviar', sans-serif;
+    font-size: 16px;
     margin: 0;
     color: #555;
     text-align: left;

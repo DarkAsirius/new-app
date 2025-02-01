@@ -1,3 +1,20 @@
+@font-face {
+	font-family: 'Caviar'; 
+	src: url(../../../../public/fonts/CaviarDreams.ttf); 
+}
+@font-face {
+	font-family: 'Caviar bold'; 
+	src: url(../../../../public/fonts/CaviarDreams_Bold.ttf); 
+}
+@font-face {
+	font-family: 'Caviar boldItalic'; 
+	src: url(../../../../public/fonts/CaviarDreams_BoldItalic.ttf); 
+}
+@font-face {
+	font-family: 'Caviar Italic'; 
+	src: url(../../../../public/fonts/CaviarDreams_Italic.ttf); 
+}
+
 .footer {
     background-color: #333; /* Цвет фона футера */
     color: white; /* Цвет текста */
@@ -6,7 +23,7 @@
 }
 
 .footer-content {
-    font-family: "Caviar" sans-serif;
+    font-family: 'Caviar', sans-serif;
     display: flex; /* Используем flexbox для выравнивания */
     justify-content: space-between; /* Распределяем пространство между элементами */
     margin-bottom: 10px; /* Отступ снизу */
