@@ -5,13 +5,9 @@
 body {
     background: linear-gradient(rgba(205,143,118,1) 0%, rgba(234,182,97,1) 100%);
     height: 100vh;
-    margin: 0; /* Убирает отступы у body */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    object-fit: cover;
+    margin: 0;
 }
-
 
 /* Контейнер карты */
 .map-container {
@@ -19,8 +15,6 @@ body {
     flex-direction: column;
     align-items: center;
     max-width: 1200px;
-    margin-top: 0 !important;
-    padding-top: 0;
     margin-left: auto;
     margin-right: auto;
     width: 100%;
