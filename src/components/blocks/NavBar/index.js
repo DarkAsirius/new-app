@@ -11,7 +11,7 @@ const Header = () => {
     return (
         <header className="header">
             <div className="logo">
-                <a href="#about"><img src="../../../logo_white.png" alt="logo1" /></a>
+                <a href="#about"><img src="../../../титул лого.png" alt="logo1" /></a>
             </div>
             <a href="#about"><div className="title">Чайная "На Заре"</div></a>
             <div className="hamburger" onClick={toggleMenu}>
