@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
-import './YandexMap.css'; // Импортируем стили
-import Contacts from '../Contacts'; // Импортируем блок контактов
+import './YandexMap.css';
+import Contacts from '../Contacts';
 
 const YandexMap = ({ coordinates }) => {
     useEffect(() => {
@@ -19,9 +19,8 @@ const YandexMap = ({ coordinates }) => {
 
                 map.geoObjects.add(placemark);
 
-                // Очистка карты при размонтировании компонента
                 return () => {
-                    map.destroy(); // Убедитесь, что карта уничтожается
+                    map.destroy();
                 };
             });
         }
@@ -33,10 +32,8 @@ const YandexMap = ({ coordinates }) => {
                 <h2 className="map-title" id="contact">Как добраться?</h2>
             </div>
             <div className="map-wrapper">
-                <div id="map" className="map" /> {/* Убедитесь, что ID совпадает */}
-                <div className="contacts">
-                    <Contacts /> {/* Блок контактов справа от карты */}
-                </div>
+                <div id="map" className="map" />
+                <Contacts />
             </div>
         </div>
     );

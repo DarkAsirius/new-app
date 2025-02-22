@@ -1,6 +1,6 @@
 import React from 'react';
 import { FaPhone, FaMapMarkerAlt, FaInstagram, FaTelegram } from 'react-icons/fa';
-import './Contacts.css'; // Импортируем стили
+import './Contacts.css';
 
 const Contacts = () => {
     return (
