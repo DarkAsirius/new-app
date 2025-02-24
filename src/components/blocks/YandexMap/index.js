@@ -4,25 +4,21 @@ import Contacts from '../Contacts';
 
 const YandexMap = ({ coordinates }) => {
     useEffect(() => {
-        const ymaps = window.ymaps;
-
-        if (ymaps) {
+        if (typeof window.ymaps !== 'undefined') {
             ymaps.ready(() => {
                 const map = new ymaps.Map('map', {
                     center: coordinates,
                     zoom: 14,
                 });
-
+    
                 const placemark = new ymaps.Placemark(coordinates, {
                     balloonContent: 'Ваше назначение',
                 });
-
+    
                 map.geoObjects.add(placemark);
-
-                return () => {
-                    map.destroy();
-                };
             });
+        } else {
+            console.error('Yandex Maps API is not available.');
         }
     }, [coordinates]);
 
