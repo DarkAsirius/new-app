@@ -4,22 +4,27 @@ import Contacts from '../Contacts';
 
 const YandexMap = ({ coordinates }) => {
     useEffect(() => {
-        if (typeof window.ymaps !== 'undefined') {
-            ymaps.ready(() => {
-                const map = new ymaps.Map('map', {
+        const script = document.createElement('script');
+        script.src = 'https://api-maps.yandex.ru/2.1/?apikey=1855be48-48ad-4e92-9f25-53bb9df8c9a9&lang=ru_RU';
+        script.onload = () => {
+            window.ymaps.ready(() => {
+                const map = new window.ymaps.Map('map', {
                     center: coordinates,
                     zoom: 14,
                 });
     
-                const placemark = new ymaps.Placemark(coordinates, {
+                const placemark = new window.ymaps.Placemark(coordinates, {
                     balloonContent: 'Ваше назначение',
                 });
     
                 map.geoObjects.add(placemark);
             });
-        } else {
-            console.error('Yandex Maps API is not available.');
-        }
+        };
+        document.head.appendChild(script);
+    
+        return () => {
+            document.head.removeChild(script);
+        };
     }, [coordinates]);
 
     return (
