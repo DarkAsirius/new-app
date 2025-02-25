@@ -8,9 +8,11 @@ const YandexMap = ({ coordinates }) => {
         const initMap = () => {
             if (typeof window.ymaps === 'undefined') {
                 console.error('Yandex Maps API is not loaded.');
-                setMapError(true); // Устанавливаем ошибку, если API не загрузился
+                setMapError(true);
                 return;
             }
+
+            console.log('Yandex Maps API loaded successfully.');
 
             window.ymaps.ready(() => {
                 const mapContainer = document.getElementById('map');
@@ -19,6 +21,8 @@ const YandexMap = ({ coordinates }) => {
                     setMapError(true);
                     return;
                 }
+
+                console.log('Map container found. Initializing map...');
 
                 const map = new window.ymaps.Map('map', {
                     center: coordinates,
@@ -30,29 +34,31 @@ const YandexMap = ({ coordinates }) => {
                 });
 
                 map.geoObjects.add(placemark);
+
+                console.log('Map initialized successfully.');
             });
         };
 
         const loadScript = () => {
             const script = document.createElement('script');
             script.src = `https://api-maps.yandex.ru/2.1/?apikey=1855be48-48ad-4e92-9f25-53bb9df8c9a9&lang=ru_RU`;
-            script.async = true; // Загружаем скрипт асинхронно
-            script.onload = initMap; // Инициализация карты после загрузки API
+            script.async = true;
+            script.onload = initMap;
             script.onerror = () => {
                 console.error('Failed to load Yandex Maps API.');
-                setMapError(true); // Устанавливаем ошибку, если API не загрузился
+                setMapError(true);
             };
             document.head.appendChild(script);
+
+            console.log('Script element created and appended.');
         };
 
-        // Используем requestIdleCallback для отложенной загрузки
         if ('requestIdleCallback' in window) {
             window.requestIdleCallback(loadScript);
         } else {
-            loadScript(); // Fallback для браузеров без поддержки requestIdleCallback
+            loadScript();
         }
 
-        // Очистка при размонтировании компонента
         return () => {
             const existingScript = document.head.querySelector('script[src*="api-maps.yandex.ru"]');
             if (existingScript) {
