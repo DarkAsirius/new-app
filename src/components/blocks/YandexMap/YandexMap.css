@@ -81,6 +81,10 @@
     min-width: 300px;
     overflow: hidden;
 }
+#map {
+    border: 2px solid red; /* Временно добавим рамку для отладки */
+    height: 200px; /* Убедитесь, что высота задана */
+}
 
 /* Контакты */
 .contacts {
