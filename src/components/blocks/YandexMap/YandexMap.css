@@ -79,8 +79,7 @@
     width: 100%;
     height: 400px; /* Высота для десктопов */
     min-width: 300px;
-    border-radius: 8px;
-    background-color: #fff; /* Фон для карты, если она не загрузится */
+    overflow: hidden;
 }
 
 /* Контакты */
@@ -123,8 +122,13 @@
 }
 
 @media (max-width: 480px) {
+    /* Скрываем карту и заголовок "Как добраться" на мобильных устройствах */
     .map {
-        height: 100px; /* Минимальная высота карты для мобильных устройств */
+        display: none; /* Скрываем карту */
+    }
+
+    .map-title-container {
+        display: none; /* Скрываем заголовок "Как добраться" */
     }
 
     .contacts {
