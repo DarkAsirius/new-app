@@ -21,18 +21,15 @@ const YandexMap = ({ coordinates }) => {
                     return;
                 }
 
-                // Создаем карту
                 const map = new window.ymaps.Map('map', {
-                    center: coordinates, // Центр карты
-                    zoom: 14, // Масштаб
+                    center: coordinates,
+                    zoom: 14,
                 });
 
-                // Создаем метку
                 const placemark = new window.ymaps.Placemark(coordinates, {
-                    balloonContent: 'Ваше назначение', // Текст в балуне
+                    balloonContent: 'Ваше назначение',
                 });
 
-                // Добавляем метку на карту
                 map.geoObjects.add(placemark);
             });
         };
@@ -76,7 +73,7 @@ const YandexMap = ({ coordinates }) => {
                 ) : (
                     <div id="map" className="map" />
                 )}
-                <Contacts />;
+                <Contacts />
             </div>
         </div>
     );
