@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import './YandexMap.css'; // Подключаем ваши стили
-import Contacts from '../Contacts';
 
 const YandexMap = ({ coordinates }) => {
     const [mapError, setMapError] = useState(false); // Состояние для ошибки загрузки карты
@@ -73,7 +72,6 @@ const YandexMap = ({ coordinates }) => {
                 ) : (
                     <div id="map" className="map" />
                 )}
-                <Contacts />
             </div>
         </div>
     );
