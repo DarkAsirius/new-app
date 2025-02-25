@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect} from 'react';
 import './YandexMap.css'; // Подключаем ваши стили
 import Contacts from '../Contacts';
 
