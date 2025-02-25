@@ -3,54 +3,70 @@ import './YandexMap.css'; // Подключаем ваши стили
 import Contacts from '../Contacts';
 
 const YandexMap = ({ coordinates }) => {
-    const [mapError, setMapError] = useState(false); // Состояние для ошибки загрузки карты
-
     useEffect(() => {
-        const initMap = () => {
-            if (typeof window.ymaps === 'undefined') {
-                console.error('Yandex Maps API is not loaded.');
-                setMapError(true); // Устанавливаем ошибку, если API не загрузился
-                return;
-            }
+        const apiKey = '1855be48-48ad-4e92-9f25-53bb9df8c9a9'; // Ваш API-ключ
+        const scriptId = 'yandex-maps-script';
 
-            window.ymaps.ready(() => {
-                const mapContainer = document.getElementById('map');
-                if (!mapContainer) {
-                    console.error('Map container not found.');
-                    setMapError(true);
-                    return;
-                }
+        // Проверяем, не загружен ли уже скрипт
+        if (document.getElementById(scriptId)) {
+            return;
+        }
 
-                const map = new window.ymaps.Map('map', {
-                    center: coordinates, // Центр карты
-                    zoom: 14, // Масштаб
-                });
-
-                // Создаем метку
-                const placemark = new window.ymaps.Placemark(coordinates, {
-                    balloonContent: 'Ваше назначение', // Текст в балуне
-                });
-
-                // Добавляем метку на карту
-                map.geoObjects.add(placemark);
-            });
-        };
-
-        // Загружаем API Яндекс Карт
+        // Создаем и добавляем скрипт для загрузки API Яндекс.Карт
         const script = document.createElement('script');
-        script.src = `https://api-maps.yandex.ru/2.1/?apikey=1855be48-48ad-4e92-9f25-53bb9df8c9a9&lang=ru_RU`;
-        script.onload = initMap; // Инициализация карты после загрузки API
-        script.onerror = () => {
-            console.error('Failed to load Yandex Maps API.');
-            setMapError(true); // Устанавливаем ошибку, если API не загрузился
+        script.id = scriptId;
+        script.src = `https://api-maps.yandex.ru/2.1/?apikey=${apiKey}&lang=ru_RU`;
+        script.async = true;
+
+        // Обработчик успешной загрузки API
+        script.onload = () => {
+            const handleScroll = () => {
+                const mapElement = document.getElementById('map');
+                if (mapElement && window.scrollY + window.innerHeight > mapElement.offsetTop) {
+                    // Загружаем карту
+                    const ymaps = window.ymaps;
+                    if (ymaps) {
+                        ymaps.ready(() => {
+                            const map = new ymaps.Map('map', {
+                                center: coordinates,
+                                zoom: 14,
+                            });
+
+                            const placemark = new ymaps.Placemark(coordinates, {
+                                balloonContent: 'Ваше назначение',
+                            });
+
+                            map.geoObjects.add(placemark);
+                        });
+                    }
+
+                    // Удаляем обработчик после загрузки карты
+                    window.removeEventListener('scroll', handleScroll);
+                }
+            };
+
+            // Добавляем обработчик скролла
+            window.addEventListener('scroll', handleScroll);
+
+            // Очистка при размонтировании компонента
+            return () => {
+                window.removeEventListener('scroll', handleScroll);
+            };
         };
+
+        // Обработчик ошибки загрузки API
+        script.onerror = () => {
+            console.error('Ошибка загрузки Yandex Maps API');
+        };
+
+        // Добавляем скрипт в документ
         document.head.appendChild(script);
 
         // Очистка при размонтировании компонента
         return () => {
-            const existingScript = document.head.querySelector('script[src*="api-maps.yandex.ru"]');
-            if (existingScript) {
-                document.head.removeChild(existingScript);
+            const scriptElement = document.getElementById(scriptId);
+            if (scriptElement) {
+                document.head.removeChild(scriptElement);
             }
         };
     }, [coordinates]);
@@ -61,12 +77,8 @@ const YandexMap = ({ coordinates }) => {
                 <h2 className="map-title" id="contact">Как добраться?</h2>
             </div>
             <div className="map-wrapper">
-                {mapError ? (
-                    <p className="map-error">Не удалось загрузить карту. Пожалуйста, проверьте подключение к интернету.</p>
-                ) : (
-                    <div id="map" className="map" />
-                )}
-                <Contacts/>
+                <div id="map" className="map" /> {/* Контейнер для карты */}
+                <Contacts />
             </div>
         </div>
     );
