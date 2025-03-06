@@ -92,7 +92,7 @@ const YandexMap = ({ coordinates }) => {
             <div className="map-wrapper">
                 {isMobile ? (
                     <div className="map-image">
-                        <img src="path/to/your/image.jpg" alt="Карта" />
+                        <img src="map.png" alt="Карта" />
                     </div>
                 ) : mapError ? (
                     <p className="map-error">Не удалось загрузить карту. Пожалуйста, проверьте подключение к интернету.</p>
