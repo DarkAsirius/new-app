@@ -25,7 +25,7 @@ const YandexMap = ({ coordinates }) => {
         const initMap = () => {
             if (typeof window.ymaps === 'undefined') {
                 console.error('Yandex Maps API is not loaded.');
-                setMapError(true);
+                setMapError(true); // Устанавливаем ошибку, если API не загружен
                 return;
             }
 
@@ -35,24 +35,29 @@ const YandexMap = ({ coordinates }) => {
                 const mapContainer = document.getElementById('map');
                 if (!mapContainer) {
                     console.error('Map container not found.');
-                    setMapError(true);
+                    setMapError(true); // Устанавливаем ошибку, если контейнер карты не найден
                     return;
                 }
 
                 console.log('Map container found. Initializing map...');
 
-                const map = new window.ymaps.Map('map', {
-                    center: coordinates,
-                    zoom: 14,
-                });
+                try {
+                    const map = new window.ymaps.Map('map', {
+                        center: coordinates,
+                        zoom: 14,
+                    });
 
-                const placemark = new window.ymaps.Placemark(coordinates, {
-                    balloonContent: 'Ваше назначение',
-                });
+                    const placemark = new window.ymaps.Placemark(coordinates, {
+                        balloonContent: 'Ваше назначение',
+                    });
 
-                map.geoObjects.add(placemark);
+                    map.geoObjects.add(placemark);
 
-                console.log('Map initialized successfully.');
+                    console.log('Map initialized successfully.');
+                } catch (error) {
+                    console.error('Error initializing map:', error);
+                    setMapError(true); // Устанавливаем ошибку, если что-то пошло не так
+                }
             });
         };
 
@@ -63,7 +68,7 @@ const YandexMap = ({ coordinates }) => {
             script.onload = initMap;
             script.onerror = () => {
                 console.error('Failed to load Yandex Maps API.');
-                setMapError(true);
+                setMapError(true); // Устанавливаем ошибку, если скрипт не загрузился
             };
             document.head.appendChild(script);
 
@@ -90,12 +95,10 @@ const YandexMap = ({ coordinates }) => {
                 <h2 className="map-title" id="contact">Как добраться?</h2>
             </div>
             <div className="map-wrapper">
-                {isMobile ? (
+                {mapError || isMobile ? ( // Если есть ошибка или это мобильное устройство
                     <div className="map-image">
-                        <img src="map.png" alt="Карта" />
+                        <img src="/map1.png" alt="Карта" /> {/* Путь к изображению */}
                     </div>
-                ) : mapError ? (
-                    <p className="map-error">Не удалось загрузить карту. Пожалуйста, проверьте подключение к интернету.</p>
                 ) : (
                     <div id="map" className="map" />
                 )}
