@@ -4,6 +4,22 @@ import Contacts from '../Contacts';
 
 const YandexMap = ({ coordinates }) => {
     const [mapError, setMapError] = useState(false); // Состояние для ошибки загрузки карты
+    const [isMobile, setIsMobile] = useState(window.innerWidth <= 480); // Состояние для определения мобильного устройства
+
+    // Функция для обновления состояния isMobile при изменении размера окна
+    const updateIsMobile = () => {
+        setIsMobile(window.innerWidth <= 480);
+    };
+
+    useEffect(() => {
+        // Добавляем обработчик изменения размера окна
+        window.addEventListener('resize', updateIsMobile);
+
+        // Убираем обработчик при размонтировании компонента
+        return () => {
+            window.removeEventListener('resize', updateIsMobile);
+        };
+    }, []);
 
     useEffect(() => {
         const initMap = () => {
@@ -74,7 +90,11 @@ const YandexMap = ({ coordinates }) => {
                 <h2 className="map-title" id="contact">Как добраться?</h2>
             </div>
             <div className="map-wrapper">
-                {mapError ? (
+                {isMobile ? (
+                    <div className="map-image">
+                        <img src="path/to/your/image.jpg" alt="Карта" />
+                    </div>
+                ) : mapError ? (
                     <p className="map-error">Не удалось загрузить карту. Пожалуйста, проверьте подключение к интернету.</p>
                 ) : (
                     <div id="map" className="map" />
