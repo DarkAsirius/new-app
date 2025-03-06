@@ -101,9 +101,11 @@
     }
 
     .map {
-        width: 100%;
-        height: 300px; /* Высота карты для планшетов */
-        margin-bottom: 20px;
+        height: 00px; /* Высота карты для мобильных устройств */
+        background-image: url('map1.png'); /* Путь к картинке */
+        background-size: cover; /* Растягиваем картинку на весь блок */
+        background-position: center; /* Центрируем картинку */
+        background-repeat: no-repeat; /* Запрещаем повторение картинки */
     }
 
     .contacts {
@@ -113,9 +115,12 @@
 
 @media (max-width: 768px) {
     .map {
-        height: 250px; /* Уменьшаем высоту карты для небольших планшетов */
+        height: 400px; /* Высота карты для мобильных устройств */
+        background-image: url('map1.png'); /* Путь к картинке */
+        background-size: cover; /* Растягиваем картинку на весь блок */
+        background-position: center; /* Центрируем картинку */
+        background-repeat: no-repeat; /* Запрещаем повторение картинки */
     }
-
     .map-title {
         font-size: 20px;
     }
@@ -123,7 +128,11 @@
 
 @media (max-width: 480px) {
     .map {
-        height: 200px; /* Высота карты для мобильных устройств */
+        height: 400px; /* Высота карты для мобильных устройств */
+        background-image: url('map1.png'); /* Путь к картинке */
+        background-size: cover; /* Растягиваем картинку на весь блок */
+        background-position: center; /* Центрируем картинку */
+        background-repeat: no-repeat; /* Запрещаем повторение картинки */
     }
 
     .map-title {
