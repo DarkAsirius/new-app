@@ -95,7 +95,7 @@ const YandexMap = ({ coordinates }) => {
                 <h2 className="map-title" id="contact">Как добраться?</h2>
             </div>
             <div className="map-wrapper">
-                {mapError || isMobile ? ( // Если есть ошибка или это мобильное устройство
+                {mapError ? ( // Если есть ошибка или это мобильное устройство
                     <div className="map-image">
                         <img src="/map1.png" alt="Карта" /> {/* Путь к изображению */}
                     </div>
